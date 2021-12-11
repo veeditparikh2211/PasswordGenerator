@@ -5,7 +5,7 @@
 var generateBtn = document.querySelector("#generate");
 
 
-function generatePassword() {
+function generatePassword(length) {
 
     var lowercaseletter = "abcdefghijklmnopqrstuvwxyz"
     var capitalsymbol = "ABCDEFGHIJKLMNOPQRSTYWXYZ"
@@ -14,15 +14,7 @@ function generatePassword() {
 
     var password = "";
     var characters = "";
-    var passwordlength = prompt("How many characters you need to generate the password");
 
-    if (passwordlength >= 5 && passwordlength <= 15) {
-        console.log(passwordlength);
-
-    } else {
-        alert("password must be betweeen 5 to 15 characters");
-
-    }
     var numbers = confirm("Do you want numbers in your password");
     var lowercase = confirm("Do you want lowercase letter in your password");
     var uppercase = confirm("Do you want uppercase letter in your password");
@@ -46,7 +38,7 @@ function generatePassword() {
         return alert("please select atleast one character")
     }
 
-    for (var i = 0; i < passwordlength; i++) {
+    for (var i = 0; i < length; i++) {
 
         password += characters[Math.floor(Math.random() * characters.length)];
 
@@ -58,10 +50,19 @@ function generatePassword() {
 
 // Write password to the #password input
 function writePassword() {
-    var password = generatePassword();
-    var passwordText = document.querySelector("#password");
+    var passwordlength = prompt("How many characters you need to generate the password");
+    if (passwordlength >= 5 && passwordlength <= 15) {
+        var password = generatePassword(passwordlength);
+        var passwordText = document.querySelector("#password");
+        passwordText.value = password;
 
-    passwordText.value = password;
+
+    } else {
+        alert("password must be betweeen 5 to 15 characters");
+
+
+    }
+
 
 }
 
