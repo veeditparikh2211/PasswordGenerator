@@ -14,6 +14,10 @@ Javascript
 
 https://veeditparikh2211.github.io/PasswordGenerator/
 
+## Application
+
+![](images/application_page.PNG)
+
 ## Contribution
 
 Made by Veedit Parikh
