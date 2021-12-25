@@ -58,7 +58,7 @@ function writePassword() {
 
 
     } else {
-        alert("password must be betweeen 5 to 15 characters");
+        alert("password must be betweeen 8 to 128 characters");
 
 
     }
