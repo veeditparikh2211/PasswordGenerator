@@ -51,7 +51,7 @@ function generatePassword(length) {
 // Write password to the #password input
 function writePassword() {
     var passwordlength = prompt("How many characters you need to generate the password");
-    if (passwordlength >= 5 && passwordlength <= 15) {
+    if (passwordlength >= 8 && passwordlength <= 128) {
         var password = generatePassword(passwordlength);
         var passwordText = document.querySelector("#password");
         passwordText.value = password;
